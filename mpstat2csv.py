@@ -46,7 +46,7 @@ with open(mpstat_log) as f:
 
   for line in f:
     if flag == 0:
-      if re.search(r"usr", line) is not None:
+      if re.search(r"usr", line):
         line = re.sub(r"\s+", ",", line)                            # 空白をタブに変換
         line = re.sub(r"[0-9]+\:[0-9]+\:[0-9]+", "hh:mm:ss", line)  # 先頭の時刻表記をhh:mm:ssに変換
         print(line.strip())                                         # strip()で空白行を削除
@@ -55,3 +55,4 @@ with open(mpstat_log) as f:
       if re.search(r"CPU|all|Average|^\n", line) is None:           # re.searchはmatchしないときにNoneを返す
         line = re.sub(r"\s+", ",", line)                            # 空白をタブに変換
         print(line.strip())                                         # strip()で空白行を削除
+
