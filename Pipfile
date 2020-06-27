@@ -9,6 +9,7 @@ verify_ssl = true
 pandas = "*"
 jupyterlab = "*"
 matplotlib = "*"
+BeautifulSoup = '*'
 
 [requires]
 python_version = "3.8"
